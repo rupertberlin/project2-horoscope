@@ -1,3 +1,13 @@
+## Project 2
+
+Our Project 2 is working with an horoscope API to be an incredable Web App.
+
+## Team Members
+Pierre
+Burak
+Andrew
+Ulrich
+
 ## Concept
 
 This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
