@@ -6,30 +6,43 @@ class Birthdayselector extends React.Component {
 
     this.state = {
       day: 1,
-      month: [
-        "january",
-        "february",
-        "march",
-        "april",
-        "may",
-        "june",
-        "july",
-        "august",
-        "september",
-        "november",
-        "december",
-      ],
+      month: "january",
     };
+    this.monthArr = [
+      "january",
+      "february",
+      "march",
+      "april",
+      "may",
+      "june",
+      "july",
+      "august",
+      "september",
+      "november",
+      "december",
+    ];
+
+    this.monthPlus = this.monthPlus.bind(this);
+  }
+
+  monthPlus(actM) {
+    const actIndex = this.monthArr.indexOf(actM);
+    if (actIndex < 12) {
+      this.setState({
+        month: this.monthArr[actIndex],
+      });
+    }
   }
 
   render() {
     const { day, month } = this.state;
+
     return (
       <div>
         BIRTHDAYSELECTOR
         <p>
           {day}
-          {month[1]}
+          {month}
         </p>
       </div>
     );
