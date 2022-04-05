@@ -5,13 +5,34 @@ class Birthdayselector extends React.Component {
     super(props);
 
     this.state = {
-        day: 1,
-        month: 'january'
-    }
+      day: 1,
+      month: [
+        "january",
+        "february",
+        "march",
+        "april",
+        "may",
+        "june",
+        "july",
+        "august",
+        "september",
+        "november",
+        "december",
+      ],
+    };
   }
 
   render() {
-    return <div>BIRTHDAYSELECTOR</div>;
+    const { day, month } = this.state;
+    return (
+      <div>
+        BIRTHDAYSELECTOR
+        <p>
+          {day}
+          {month[1]}
+        </p>
+      </div>
+    );
   }
 }
 
