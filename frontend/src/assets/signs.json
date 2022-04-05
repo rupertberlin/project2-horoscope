@@ -1,0 +1,56 @@
+[{
+    "sign": "aries",
+    "start": "March 21",
+    "end": "April 20"
+},
+{
+    "sign": "taurus",
+    "start": "April 21",
+    "end": "May 20"
+},
+{
+    "sign": "gemini",
+    "start": "May 21",
+    "end": "June 21"
+},
+{
+    "sign": "cancer",
+    "start": "June 22",
+    "end": "July 22"
+},
+{
+    "sign": "leo",
+    "start": "June 23",
+    "end": "August 22" 
+},
+{
+    "sign": "virgo",
+    "start": "August 23",
+    "ende": "September 22"
+},
+{
+    "sign": "scorpio",
+    "start": "October 23",
+    "end": "November 22"
+},
+{
+    "sign": "sagittarius",
+    "start": "November 23",
+    "end": "December 21"
+},
+{
+    "sign": "capricorn",
+    "start": "December 22",
+    "end": "January 19"
+},
+{
+    "sign": "aquarius",
+    "start": "January 20",
+    "end": "February 18"
+},
+{
+    "sign": "pisces",
+    "start": "February 19",
+    "end": "March 20"
+}
+]
