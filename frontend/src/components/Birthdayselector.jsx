@@ -23,13 +23,23 @@ class Birthdayselector extends React.Component {
     ];
 
     this.monthPlus = this.monthPlus.bind(this);
+    this.monthMinus = this.monthMinus.bind(this);
   }
 
   monthPlus(actM) {
     const actIndex = this.monthArr.indexOf(actM);
     if (actIndex < 12) {
       this.setState({
-        month: this.monthArr[actIndex],
+        month: this.monthArr[actIndex + 1],
+      });
+    }
+  }
+
+  monthMinus(actM) {
+    if (actM !== "january") {
+      const actIndex = this.monthArr.indexOf(actM);
+      this.setState({
+        month: this.monthArr[actIndex - 1],
       });
     }
   }
