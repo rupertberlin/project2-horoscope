@@ -7,20 +7,20 @@ class Birthdayselector extends React.Component {
 
     this.state = {
       day: 1,
-      month: "january",
+      month: "January",
     };
     this.monthArr = [
-      "january",
-      "february",
-      "march",
-      "april",
-      "may",
-      "june",
-      "july",
-      "august",
-      "september",
-      "november",
-      "december",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "November",
+      "December",
     ];
 
     this.monthPlus = this.monthPlus.bind(this);
@@ -39,7 +39,7 @@ class Birthdayselector extends React.Component {
   }
 
   monthMinus(actM) {
-    if (actM.month !== "january") {
+    if (actM.month !== "January") {
       const actIndex = this.monthArr.indexOf(actM.month);
       this.setState({
         month: this.monthArr[actIndex - 1],
@@ -47,21 +47,21 @@ class Birthdayselector extends React.Component {
     }
   }
 
-  dayPlus(prevDay) {
+  dayPlus() {
     const { day, month } = this.state;
-    if (Date.parse(`${month} ${day}, 2000`)) {
+
+    if (Date.parse(`${month} ${day + 1}, 2000`)) {
       this.setState({
-        day: prevDay + 1,
+        day: day + 1,
       });
-    } else {
-      this.dayMinus(day);
     }
   }
 
-  dayMinus(prevDay) {
-    if (prevDay !== 1) {
+  dayMinus() {
+    const { day } = this.state;
+    if (day !== 1) {
       this.setState({
-        day: prevDay - 1,
+        day: day - 1,
       });
     }
   }
@@ -76,8 +76,8 @@ class Birthdayselector extends React.Component {
           <span className="day-selector">
             <div
               className="day-minus plus-minus"
-              onClick={() => this.dayMinus({ day })}
-              onKeyDown={() => this.dayMinus({ day })}
+              onClick={this.dayMinus}
+              onKeyDown={this.dayMinus}
               role="button"
               tabIndex={-3}
             >
@@ -86,8 +86,8 @@ class Birthdayselector extends React.Component {
             <div className="day-value value">{day}</div>
             <div
               className="day-plus plus-minus"
-              onClick={() => this.dayMinus({ day })}
-              onKeyDown={() => this.dayMinus({ day })}
+              onClick={this.dayPlus}
+              onKeyDown={this.dayPlus}
               role="button"
               tabIndex={-4}
             >
