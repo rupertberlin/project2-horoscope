@@ -1,0 +1,16 @@
+.birthday-selector {
+  display: flex;
+  justify-content: center;
+}
+
+.day-selector {
+  display: flex;
+}
+
+.month-selector {
+  display: flex;
+}
+
+.birthday-selector span {
+  margin-inline: 28px;
+}

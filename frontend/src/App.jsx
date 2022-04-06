@@ -24,9 +24,8 @@ class App extends React.Component {
     const { sign } = this.state;
     return (
       <div className="App">
-        SSTT
         <Home />
-        SSTT
+
         <Birthdayselector sign={sign} />
       </div>
     );
