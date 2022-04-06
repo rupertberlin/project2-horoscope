@@ -1,56 +1,56 @@
 [{
     "sign": "aries",
-    "start": "March 21",
-    "end": "April 20"
+    "start": "March 21, 2000",
+    "end": "April , 2000,"
 },
 {
     "sign": "taurus",
-    "start": "April 21",
-    "end": "May 20"
+    "start": "April 21, 2000",
+    "end": "May 20, 2000"
 },
 {
     "sign": "gemini",
-    "start": "May 21",
-    "end": "June 21"
+    "start": "May 21, 2000",
+    "end": "June 21, 2000"
 },
 {
     "sign": "cancer",
-    "start": "June 22",
-    "end": "July 22"
+    "start": "June 22, 2000",
+    "end": "July 22, 2000"
 },
 {
     "sign": "leo",
-    "start": "June 23",
-    "end": "August 22" 
+    "start": "June 23, 2000",
+    "end": "August 22, 2000" 
 },
 {
     "sign": "virgo",
-    "start": "August 23",
-    "ende": "September 22"
+    "start": "August 23, 2000",
+    "ende": "September 22, 2000"
 },
 {
     "sign": "scorpio",
-    "start": "October 23",
-    "end": "November 22"
+    "start": "October 23, 2000",
+    "end": "November 22, 2000"
 },
 {
     "sign": "sagittarius",
-    "start": "November 23",
-    "end": "December 21"
+    "start": "November 23, 2000",
+    "end": "December 21, 2000"
 },
 {
     "sign": "capricorn",
-    "start": "December 22",
-    "end": "January 19"
+    "start": "December 22, 2001",
+    "end": "January 19, 2001"
 },
 {
     "sign": "aquarius",
-    "start": "January 20",
-    "end": "February 18"
+    "start": "January 20, 2001",
+    "end": "February 18, 2001"
 },
 {
     "sign": "pisces",
-    "start": "February 19",
-    "end": "March 20"
+    "start": "February 19, 2001",
+    "end": "March 20, 2001"
 }
 ]
