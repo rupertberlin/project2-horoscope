@@ -53,15 +53,15 @@ class Birthdayselector extends React.Component {
         <h2>Your Birthday</h2>
         <div className="birthday-selector">
           <span className="day-selector">
-            <div className="day-minus">-</div>
+            <div className="day-minus plus-minus">-</div>
             <div className="selector-value">{day}</div>
-            <div className="day-plus">+</div>
+            <div className="day-plus plus-minus">+</div>
           </span>
           <span className="month-selector">
             <div
               role="button"
               tabIndex={0}
-              className="month-minus"
+              className="month-minus plus-minus"
               onClick={() => this.monthMinus({ month })}
               onKeyDown={() => this.monthMinus({ month })}
             >
@@ -71,7 +71,7 @@ class Birthdayselector extends React.Component {
             <div
               role="button"
               tabIndex={-1}
-              className="month-plus"
+              className="month-plus plus-minus"
               onClick={() => this.monthPlus({ month })}
               onKeyDown={() => this.monthPlus({ month })}
             >
