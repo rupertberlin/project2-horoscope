@@ -29,7 +29,7 @@ class Birthdayselector extends React.Component {
 
   monthPlus(actM) {
     const actIndex = this.monthArr.indexOf(actM.month);
-    if (actIndex < 12) {
+    if (actIndex < 10) {
       this.setState({
         month: this.monthArr[actIndex + 1],
       });
@@ -54,7 +54,7 @@ class Birthdayselector extends React.Component {
         <div className="birthday-selector">
           <span className="day-selector">
             <div className="day-minus plus-minus">-</div>
-            <div className="selector-value">{day}</div>
+            <div className="day-value value">{day}</div>
             <div className="day-plus plus-minus">+</div>
           </span>
           <span className="month-selector">
@@ -67,7 +67,7 @@ class Birthdayselector extends React.Component {
             >
               -
             </div>
-            <div className="month-value">{month}</div>
+            <div className="month-value value">{month}</div>
             <div
               role="button"
               tabIndex={-1}
