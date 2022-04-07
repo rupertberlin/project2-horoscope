@@ -77,7 +77,7 @@ class Birthdayselector extends React.Component {
       <div>
         <h2>Your Birthday</h2>
         <div className="birthday-selector">
-        <span className="month-selector">
+          <span className="month-selector">
             <div
               className="month-minus plus-minus"
               onClick={() => this.monthMinus({ month })}
@@ -119,7 +119,6 @@ class Birthdayselector extends React.Component {
               +
             </div>
           </span>
-     
         </div>
         <div>
           <Birthdaysign sign={sign} setSign={setSign} month={month} day={day} />
