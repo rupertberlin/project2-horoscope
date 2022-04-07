@@ -27,12 +27,19 @@ class DailyHoroscope extends React.Component {
     const { json } = this.state;
     return (
       <div className="daily-horoscope">
-        <h3>{sign}</h3>
+        <div className="lucky-number">{json.lucky_number}</div>
+        <p className="p-lucky">Lucky number</p>
+        <h3>
+          {sign}
+          <br />
+          {json.date_range}
+        </h3>
         <h2>Today`s Horoscope ({json.current_date})</h2>
         <p>{json.description}</p>
         <button type="button" onClick={setShowDaily}>
           Back
         </button>
+        <button type="button">tomorrow ➡️</button>
       </div>
     );
   }

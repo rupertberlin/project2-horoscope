@@ -47,7 +47,83 @@
   margin-inline: -22px;
 }
 
+.value:hover {
+  background: violet;
+  user-select: none;
+}
+
 .sign-img {
   width: 108px;
   margin: 32px;
+}
+
+.month-dropdown {
+  position: relative;
+  height: 0px;
+  list-style: none;
+  text-align: center;
+  width: 180px;
+  left: 130px;
+  margin-top: 60px;
+  margin-left: -410px;
+  overflow: visible;
+  z-index: 3;
+}
+
+.month-dropdown li {
+  background: blueviolet;
+  font-size: 1.3rem;
+  font-weight: 500;
+  border: blue 2px solid;
+  user-select: none;
+}
+
+.month-dropdown li:hover {
+  background: violet;
+}
+
+.day-dropdown {
+  position: relativ;
+  height: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  width: 20ch;
+  list-style: none;
+  text-align: center;
+  padding: 3px;
+  user-select: none;
+  margin-top: 55px;
+  margin-left: -175px;
+}
+
+.day-dropdown div {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  background: blueviolet;
+  padding: 3px;
+  gap: 4px;
+  border: blue solid 2px;
+  z-index: 50;
+  width: 20ch;
+}
+
+.day-dropdown li {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: blue;
+  font-weight: 700;
+  border-radius: 40px;
+  padding-top: 2px;
+  z-index: 50;
+}
+
+i {
+  font-style: normal;
+}
+
+.day-dropdown li:hover {
+  background-color: violet;
 }

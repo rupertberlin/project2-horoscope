@@ -10,6 +10,8 @@ class Birthdayselector extends React.Component {
     this.state = {
       day: 1,
       month: "January",
+      dropDownMonth: false,
+      dropDownDay: false,
     };
     this.monthArr = [
       "January",
@@ -26,10 +28,41 @@ class Birthdayselector extends React.Component {
       "December",
     ];
 
+    this.dayArr = [
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+      22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
+    ];
+
+    this.pullDropDownMonth = this.pullDropDownMonth.bind(this);
+    this.pullDropDownDay = this.pullDropDownDay.bind(this);
+    this.chooseDropDownMonth = this.chooseDropDownMonth.bind(this);
+    this.chooseDropDownDay = this.chooseDropDownDay.bind(this);
     this.monthPlus = this.monthPlus.bind(this);
     this.monthMinus = this.monthMinus.bind(this);
     this.dayPlus = this.dayPlus.bind(this);
     this.dayMinus = this.dayMinus.bind(this);
+  }
+
+  pullDropDownMonth() {
+    this.setState({ dropDownMonth: true });
+  }
+
+  pullDropDownDay() {
+    this.setState({ dropDownDay: true });
+  }
+
+  chooseDropDownMonth(month) {
+    this.setState({
+      month,
+      dropDownMonth: false,
+    });
+  }
+
+  chooseDropDownDay(day) {
+    this.setState({
+      day,
+      dropDownDay: false,
+    });
   }
 
   monthPlus(actM) {
@@ -70,7 +103,7 @@ class Birthdayselector extends React.Component {
   }
 
   render() {
-    const { day, month } = this.state;
+    const { day, month, dropDownMonth, dropDownDay } = this.state;
     const { sign, setSign } = this.props;
 
     return (
@@ -87,7 +120,15 @@ class Birthdayselector extends React.Component {
             >
               -
             </div>
-            <div className="month-value value">{month}</div>
+            <div
+              role="button"
+              onClick={this.pullDropDownMonth}
+              onKeyDown={this.pullDropDownMonth}
+              tabIndex={0}
+              className="month-value value"
+            >
+              {month}
+            </div>
             <div
               className="month-plus plus-minus"
               onClick={() => this.monthPlus({ month })}
@@ -98,6 +139,26 @@ class Birthdayselector extends React.Component {
               +
             </div>
           </span>
+          {dropDownMonth && (
+            <div>
+              <ul className="month-dropdown">
+                {this.monthArr.map((item) => {
+                  return (
+                    <li>
+                      <div
+                        role="button"
+                        onClick={() => this.chooseDropDownMonth(item)}
+                        onKeyDown={() => this.chooseDropDownMonth(item)}
+                        tabIndex={0}
+                      >
+                        {item}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
           <span className="day-selector">
             <div
               className="day-minus plus-minus"
@@ -108,7 +169,15 @@ class Birthdayselector extends React.Component {
             >
               -
             </div>
-            <div className="day-value value">{day}</div>
+            <div
+              role="button"
+              onClick={this.pullDropDownDay}
+              onKeyDown={this.pullDropDownDay}
+              tabIndex={0}
+              className="day-value value"
+            >
+              {day}
+            </div>
             <div
               className="day-plus plus-minus"
               onClick={this.dayPlus}
@@ -119,7 +188,30 @@ class Birthdayselector extends React.Component {
               +
             </div>
           </span>
+          {dropDownDay && (
+            <div>
+              <ul className="day-dropdown">
+                <div>
+                  {this.dayArr.map((item) => {
+                    return (
+                      <li>
+                        <i
+                          role="button"
+                          onClick={() => this.chooseDropDownDay(item)}
+                          onKeyDown={() => this.chooseDropDownDay(item)}
+                          tabIndex={0}
+                        >
+                          {item}
+                        </i>
+                      </li>
+                    );
+                  })}
+                </div>
+              </ul>
+            </div>
+          )}
         </div>
+
         <div>
           <Birthdaysign sign={sign} setSign={setSign} month={month} day={day} />
         </div>
