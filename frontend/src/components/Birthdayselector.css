@@ -17,7 +17,8 @@
 
 .plus-minus {
   user-select: none;
-  background: coral;
+  background: blueviolet;
+  border: solid 2px blue;
   width: 52px;
   height: 52px;
   border-radius: 100px;

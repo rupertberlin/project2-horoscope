@@ -1,0 +1,10 @@
+.daily-horoscope {
+  display: block;
+  margin: auto;
+  text-align: center;
+  width: 50ch;
+  line-height: 1.8rem;
+  background: blueviolet;
+  border: solid 3px blue;
+  padding: 30px;
+}
