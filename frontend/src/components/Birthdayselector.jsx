@@ -77,6 +77,27 @@ class Birthdayselector extends React.Component {
       <div>
         <h2>Your Birthday</h2>
         <div className="birthday-selector">
+        <span className="month-selector">
+            <div
+              className="month-minus plus-minus"
+              onClick={() => this.monthMinus({ month })}
+              onKeyDown={() => this.monthMinus({ month })}
+              role="button"
+              tabIndex={0}
+            >
+              -
+            </div>
+            <div className="month-value value">{month}</div>
+            <div
+              className="month-plus plus-minus"
+              onClick={() => this.monthPlus({ month })}
+              onKeyDown={() => this.monthPlus({ month })}
+              role="button"
+              tabIndex={0}
+            >
+              +
+            </div>
+          </span>
           <span className="day-selector">
             <div
               className="day-minus plus-minus"
@@ -98,27 +119,7 @@ class Birthdayselector extends React.Component {
               +
             </div>
           </span>
-          <span className="month-selector">
-            <div
-              className="month-minus plus-minus"
-              onClick={() => this.monthMinus({ month })}
-              onKeyDown={() => this.monthMinus({ month })}
-              role="button"
-              tabIndex={0}
-            >
-              -
-            </div>
-            <div className="month-value value">{month}</div>
-            <div
-              className="month-plus plus-minus"
-              onClick={() => this.monthPlus({ month })}
-              onKeyDown={() => this.monthPlus({ month })}
-              role="button"
-              tabIndex={0}
-            >
-              +
-            </div>
-          </span>
+     
         </div>
         <div>
           <Birthdaysign sign={sign} setSign={setSign} month={month} day={day} />
