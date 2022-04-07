@@ -25,15 +25,13 @@
   font-size: 2.2rem;
   z-index: 10;
   margin-top: 38px;
-  
 }
 .value {
-    background: blueviolet;
-    border: solid 6px blue;
-    font-size: 2.6rem;
-    border-radius: 30px;
+  background: blueviolet;
+  border: solid 6px blue;
+  font-size: 2.6rem;
+  border-radius: 30px;
 }
-
 
 .month-value {
   width: 235px;
@@ -42,8 +40,8 @@
 }
 
 .day-value {
-    background: blueviolet;
-    width: 47px;
-    height: 47px;
-    margin-inline: -22px;
-  }
+  background: blueviolet;
+  width: 47px;
+  height: 47px;
+  margin-inline: -22px;
+}

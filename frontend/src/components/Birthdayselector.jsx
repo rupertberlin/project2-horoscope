@@ -1,5 +1,7 @@
 import React from "react";
 import "@components/Birthdayselector.css";
+import propTypes from "prop-types";
+import Birthdaysign from "./Birthdaysign";
 
 class Birthdayselector extends React.Component {
   constructor(props) {
@@ -19,6 +21,7 @@ class Birthdayselector extends React.Component {
       "July",
       "August",
       "September",
+      "October",
       "November",
       "December",
     ];
@@ -31,7 +34,7 @@ class Birthdayselector extends React.Component {
 
   monthPlus(actM) {
     const actIndex = this.monthArr.indexOf(actM.month);
-    if (actIndex < 10) {
+    if (actIndex < 11) {
       this.setState({
         month: this.monthArr[actIndex + 1],
       });
@@ -68,6 +71,7 @@ class Birthdayselector extends React.Component {
 
   render() {
     const { day, month } = this.state;
+    const { sign, setSign } = this.props;
 
     return (
       <div>
@@ -79,7 +83,7 @@ class Birthdayselector extends React.Component {
               onClick={this.dayMinus}
               onKeyDown={this.dayMinus}
               role="button"
-              tabIndex={-3}
+              tabIndex={0}
             >
               -
             </div>
@@ -89,7 +93,7 @@ class Birthdayselector extends React.Component {
               onClick={this.dayPlus}
               onKeyDown={this.dayPlus}
               role="button"
-              tabIndex={-4}
+              tabIndex={0}
             >
               +
             </div>
@@ -110,15 +114,23 @@ class Birthdayselector extends React.Component {
               onClick={() => this.monthPlus({ month })}
               onKeyDown={() => this.monthPlus({ month })}
               role="button"
-              tabIndex={-1}
+              tabIndex={0}
             >
               +
             </div>
           </span>
         </div>
+        <div>
+          <Birthdaysign sign={sign} setSign={setSign} month={month} day={day} />
+        </div>
       </div>
     );
   }
 }
+
+Birthdayselector.propTypes = {
+  sign: propTypes.string.isRequired,
+  setSign: propTypes.func.isRequired,
+};
 
 export default Birthdayselector;

@@ -26,7 +26,7 @@ class App extends React.Component {
       <div className="App">
         <Home />
 
-        <Birthdayselector sign={sign} />
+        <Birthdayselector sign={sign} setSign={this.setSign} />
       </div>
     );
   }
