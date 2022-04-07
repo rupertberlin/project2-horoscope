@@ -41,6 +41,7 @@ class Birthdaysign extends React.Component {
         <img
           src={`../src/assets/signs-small/${sign}.png`}
           alt={`Astro Sign ${sign}`}
+          className='sign-img'
         />
       </div>
     );
