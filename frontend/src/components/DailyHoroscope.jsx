@@ -7,12 +7,16 @@ class DailyHoroscope extends React.Component {
     super(props);
     this.state = {
       json: {},
+      targetDay: "today",
     };
+
+    this.setTargetDay = this.setTargetDay.bind(this);
   }
 
   componentDidMount() {
     const { sign } = this.props;
-    const URL = `https://aztro.sameerkumar.website/?sign=${sign}&day=today`;
+    const { targetDay } = this.state;
+    const URL = `https://aztro.sameerkumar.website/?sign=${sign}&day=${targetDay}`;
     fetch(URL, {
       method: "POST",
     })
@@ -22,9 +26,31 @@ class DailyHoroscope extends React.Component {
       });
   }
 
+  componentDidUpdate(prevState) {
+    const { targetDay } = this.state;
+    if (prevState.targetDay !== targetDay) {
+      const { sign } = this.props;
+      const URL = `https://aztro.sameerkumar.website/?sign=${sign}&day=${targetDay}`;
+      fetch(URL, {
+        method: "POST",
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          this.setState({ json });
+        });
+    }
+  }
+
+  setTargetDay() {
+    const { targetDay } = this.state;
+
+    if (targetDay === "today") this.setState({ targetDay: "tomorrow" });
+    else this.setState({ targetDay: "today" });
+  }
+
   render() {
     const { sign, setShowDaily } = this.props;
-    const { json } = this.state;
+    const { json, targetDay } = this.state;
     return (
       <div className="daily-horoscope">
         <div className="lucky-number">{json.lucky_number}</div>
@@ -34,12 +60,17 @@ class DailyHoroscope extends React.Component {
           <br />
           {json.date_range}
         </h3>
-        <h2>Today`s Horoscope ({json.current_date})</h2>
+        <h2>
+          {targetDay === "today" ? "Today`s" : "Tomorrow`s"} Horoscope (
+          {json.current_date})
+        </h2>
         <p>{json.description}</p>
         <button type="button" onClick={setShowDaily}>
           Back
         </button>
-        <button type="button">tomorrow ➡️</button>
+        <button type="button" onClick={this.setTargetDay}>
+          {targetDay === "today" ? "tomorrow ➡️" : "⬅️ today"}
+        </button>
       </div>
     );
   }
