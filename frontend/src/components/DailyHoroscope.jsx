@@ -26,7 +26,7 @@ class DailyHoroscope extends React.Component {
       });
   }
 
-  componentDidUpdate(prevState) {
+  componentDidUpdate(prevProps, prevState) {
     const { targetDay } = this.state;
     if (prevState.targetDay !== targetDay) {
       const { sign } = this.props;

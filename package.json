@@ -19,6 +19,7 @@
     "husky": "^7.0.0"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "prop-types": "^15.8.1"
   }
 }

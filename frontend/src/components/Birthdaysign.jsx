@@ -10,6 +10,27 @@ class Birthdaysign extends React.Component {
     this.year = 2001;
   }
 
+  componentDidMount() {
+    const { day, month, setSign } = this.props;
+
+    /* change year for Date.parse so that is is one year upper
+        for capricorn" till pisces */
+    if (Date.parse(`${month} ${day}, 2000`) > Date.parse("March 20, 2000"))
+      this.year = "2000";
+    else this.year = "2001";
+
+    const parsePicker = Date.parse(`${month} ${day}, ${this.year}`);
+
+    for (let i = 0; i < signData.length; i += 1) {
+      const parseStart = Date.parse(signData[i].start);
+      const parseEnd = Date.parse(signData[i].end);
+
+      if (parsePicker >= parseStart && parsePicker <= parseEnd) {
+        setSign(signData[i].sign);
+      }
+    }
+  }
+
   componentDidUpdate(prevProps) {
     const { day, month, setSign } = this.props;
 
@@ -38,11 +59,13 @@ class Birthdaysign extends React.Component {
 
     return (
       <div>
-        <img
-          src={`../src/assets/signs-small/${sign}.png`}
-          alt={`Astro Sign ${sign}`}
-          className="sign-img"
-        />
+        {sign && (
+          <img
+            src={`../src/assets/signs-small/${sign}.png`}
+            alt={`Astro Sign ${sign}`}
+            className="sign-img"
+          />
+        )}
       </div>
     );
   }
