@@ -3,6 +3,7 @@ import Home from "@pages/Home";
 import Birthdayselector from "@components/Birthdayselector";
 import DailyHoroscope from "@components/DailyHoroscope";
 import Celebritylookup from "@components/Celebritylookup";
+import NavBar from "@components/NavBar";
 
 import "./App.css";
 
@@ -43,6 +44,7 @@ class App extends React.Component {
     const { sign, showDaily, signSelector } = this.state;
     return (
       <div className="App">
+        <NavBar />
         <Home />
 
         {!showDaily && signSelector === "Birthdayselector" && (
