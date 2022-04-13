@@ -19,32 +19,34 @@
   user-select: none;
   background: blueviolet;
   border: solid 2px blue;
-  width: 52px;
-  height: 52px;
+  width: 30px;
+  height: 30px;
   border-radius: 100px;
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
   z-index: 10;
-  margin-top: 38px;
+  margin-top: 20px;
+  padding-bottom: 0px;
 }
 .value {
   background: blueviolet;
   border: solid 6px blue;
-  font-size: 2.6rem;
+  font-size: 1.6rem;
   border-radius: 30px;
 }
 
 .month-value {
-  width: 235px;
-  height: 47px;
-  margin-inline: -42px;
+  width: 180px;
+  height: 35px;
+  margin-inline: -27px;
 }
 
 .day-value {
   background: blueviolet;
-  width: 47px;
-  height: 47px;
-  margin-inline: -22px;
+  width: 35px;
+  height: 35px;
+  margin-inline: -16px;
 }
 
 .value:hover {
@@ -62,11 +64,10 @@
   height: 0px;
   list-style: none;
   text-align: center;
-  width: 180px;
-  left: 130px;
-  margin-top: 60px;
-  margin-left: -410px;
+  width: 160px;
+  margin-top: -12px;
   overflow: visible;
+  margin-left: -28px;
   z-index: 3;
 }
 
@@ -93,8 +94,8 @@
   text-align: center;
   padding: 3px;
   user-select: none;
-  margin-top: 55px;
-  margin-left: -175px;
+  margin-top: -20px;
+  margin-left: -34px;
 }
 
 .day-dropdown div {
@@ -126,4 +127,10 @@ i {
 
 .day-dropdown li:hover {
   background-color: violet;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
