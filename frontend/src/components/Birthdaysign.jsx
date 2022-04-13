@@ -1,6 +1,7 @@
 import React from "react";
 import { signData } from "@assets/signsData";
 import propTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 class Birthdaysign extends React.Component {
   constructor(props) {
@@ -66,6 +67,10 @@ class Birthdaysign extends React.Component {
             className="sign-img"
           />
         )}
+        <br />
+        <Link to={`../daily-horoscope/today/${sign}`}>
+          Go to daily horoscope
+        </Link>
       </div>
     );
   }
