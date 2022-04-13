@@ -1,6 +1,7 @@
 import React from "react";
-import "@components/Celebritylookup.css";
+import { Link } from "react-router-dom";
 import propTypes from "prop-types";
+import "@components/Celebritylookup.css";
 import Birthdaysign from "./Birthdaysign";
 
 class Celebritylookup extends React.Component {
@@ -22,11 +23,13 @@ class Celebritylookup extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  /*   Reset astro sign state on load */
   componentDidMount() {
     const { setSign } = this.props;
     setSign("");
   }
 
+  /*   Does an API fetch for every input change */
   componentDidUpdate(prevProps, prevState) {
     const { input, json } = this.state;
     if (prevState.input !== input) {
@@ -57,15 +60,18 @@ class Celebritylookup extends React.Component {
     });
   }
 
+  /*   Sets states for name day and month to celebritys data */
   clickLookup(name) {
     const { json } = this.state;
 
     let index = 0;
 
+    /* sets index of choosen name in json */
     for (let i = 0; i < json.length; i += 1) {
       if (name === json[i].name) index = i;
     }
 
+    /* Capitalize first letter of celebritys name parts */
     let celebrity = json[index].name.split(" ");
     for (let i = 0; i < celebrity.length; i += 1) {
       celebrity[i] =
@@ -73,7 +79,9 @@ class Celebritylookup extends React.Component {
     }
     celebrity = celebrity.join(" ");
 
+    /* seperate day and month from birthday */
     const dateArr = json[index].birthdy.split("-");
+
     this.setState({
       showSign: true,
       month: dateArr[1],
@@ -139,6 +147,12 @@ class Celebritylookup extends React.Component {
         {showSign && (
           <Birthdaysign sign={sign} setSign={setSign} month={month} day={day} />
         )}
+        <br />
+        <Link to="/">
+          <button type="button">Back</button>
+        </Link>
+        <br />
+        &nbsp;
       </div>
     );
   }

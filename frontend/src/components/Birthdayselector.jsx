@@ -1,7 +1,8 @@
 import React from "react";
-import "@components/Birthdayselector.css";
 import propTypes from "prop-types";
+import { Link } from "react-router-dom";
 import Birthdaysign from "./Birthdaysign";
+import "@components/Birthdayselector.css";
 
 class Birthdayselector extends React.Component {
   constructor(props) {
@@ -215,6 +216,9 @@ class Birthdayselector extends React.Component {
         <div>
           <Birthdaysign sign={sign} setSign={setSign} month={month} day={day} />
         </div>
+        <Link to="./celebrity-lookup">
+          You want to ask for a celebritys astro sign?
+        </Link>
       </div>
     );
   }
