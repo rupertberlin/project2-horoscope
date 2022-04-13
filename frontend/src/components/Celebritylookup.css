@@ -11,6 +11,7 @@
 input {
   width: 200px;
   height: 28px;
+  box-shadow: gold 0px 0px 20px 2px;
 }
 
 .auto-find {
