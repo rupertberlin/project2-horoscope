@@ -1,10 +1,9 @@
 import React from "react";
 import "@components/DailyHoroscope.css";
-import { useState } from "react/cjs/react.production.min";
 import { useParams, Link } from "react-router-dom";
 
 function DailyHoroscope() {
-  const [json, setJson] = useState("");
+  const [json, setJson] = React.useState("");
   const { date, sign } = useParams();
 
   React.useEffect(() => {
