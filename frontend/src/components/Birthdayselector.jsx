@@ -1,7 +1,8 @@
 import React from "react";
-import "@components/Birthdayselector.css";
 import propTypes from "prop-types";
+import { Link } from "react-router-dom";
 import Birthdaysign from "./Birthdaysign";
+import "@components/Birthdayselector.css";
 
 class Birthdayselector extends React.Component {
   constructor(props) {
@@ -110,111 +111,118 @@ class Birthdayselector extends React.Component {
       <div>
         <h2>Your Birthday</h2>
         <div className="birthday-selector">
-          <span className="month-selector">
-            <div
-              className="month-minus plus-minus"
-              onClick={() => this.monthMinus({ month })}
-              onKeyDown={() => this.monthMinus({ month })}
-              role="button"
-              tabIndex={0}
-            >
-              -
-            </div>
-            <div
-              role="button"
-              onClick={this.pullDropDownMonth}
-              onKeyDown={this.pullDropDownMonth}
-              tabIndex={0}
-              className="month-value value"
-            >
-              {month}
-            </div>
-            <div
-              className="month-plus plus-minus"
-              onClick={() => this.monthPlus({ month })}
-              onKeyDown={() => this.monthPlus({ month })}
-              role="button"
-              tabIndex={0}
-            >
-              +
-            </div>
-          </span>
-          {dropDownMonth && (
-            <div>
-              <ul className="month-dropdown">
-                {this.monthArr.map((item) => {
-                  return (
-                    <li>
-                      <div
-                        role="button"
-                        onClick={() => this.chooseDropDownMonth(item)}
-                        onKeyDown={() => this.chooseDropDownMonth(item)}
-                        tabIndex={0}
-                      >
-                        {item}
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          )}
-          <span className="day-selector">
-            <div
-              className="day-minus plus-minus"
-              onClick={this.dayMinus}
-              onKeyDown={this.dayMinus}
-              role="button"
-              tabIndex={0}
-            >
-              -
-            </div>
-            <div
-              role="button"
-              onClick={this.pullDropDownDay}
-              onKeyDown={this.pullDropDownDay}
-              tabIndex={0}
-              className="day-value value"
-            >
-              {day}
-            </div>
-            <div
-              className="day-plus plus-minus"
-              onClick={this.dayPlus}
-              onKeyDown={this.dayPlus}
-              role="button"
-              tabIndex={0}
-            >
-              +
-            </div>
-          </span>
-          {dropDownDay && (
-            <div>
-              <ul className="day-dropdown">
-                <div>
-                  {this.dayArr.map((item) => {
+          <div className="flex-column">
+            <span className="month-selector">
+              <div
+                className="month-minus plus-minus"
+                onClick={() => this.monthMinus({ month })}
+                onKeyDown={() => this.monthMinus({ month })}
+                role="button"
+                tabIndex={0}
+              >
+                -
+              </div>
+              <div
+                role="button"
+                onClick={this.pullDropDownMonth}
+                onKeyDown={this.pullDropDownMonth}
+                tabIndex={0}
+                className="month-value value"
+              >
+                {month}
+              </div>
+              <div
+                className="month-plus plus-minus"
+                onClick={() => this.monthPlus({ month })}
+                onKeyDown={() => this.monthPlus({ month })}
+                role="button"
+                tabIndex={0}
+              >
+                +
+              </div>
+            </span>
+            {dropDownMonth && (
+              <div>
+                <ul className="month-dropdown">
+                  {this.monthArr.map((item) => {
                     return (
                       <li>
-                        <i
+                        <div
                           role="button"
-                          onClick={() => this.chooseDropDownDay(item)}
-                          onKeyDown={() => this.chooseDropDownDay(item)}
+                          onClick={() => this.chooseDropDownMonth(item)}
+                          onKeyDown={() => this.chooseDropDownMonth(item)}
                           tabIndex={0}
                         >
                           {item}
-                        </i>
+                        </div>
                       </li>
                     );
                   })}
-                </div>
-              </ul>
-            </div>
-          )}
+                </ul>
+              </div>
+            )}
+          </div>
+          <div className="flex-column">
+            <span className="day-selector">
+              <div
+                className="day-minus plus-minus"
+                onClick={this.dayMinus}
+                onKeyDown={this.dayMinus}
+                role="button"
+                tabIndex={0}
+              >
+                -
+              </div>
+              <div
+                role="button"
+                onClick={this.pullDropDownDay}
+                onKeyDown={this.pullDropDownDay}
+                tabIndex={0}
+                className="day-value value"
+              >
+                {day}
+              </div>
+              <div
+                className="day-plus plus-minus"
+                onClick={this.dayPlus}
+                onKeyDown={this.dayPlus}
+                role="button"
+                tabIndex={0}
+              >
+                +
+              </div>
+            </span>
+            {dropDownDay && (
+              <div>
+                <ul className="day-dropdown">
+                  <div>
+                    {this.dayArr.map((item) => {
+                      return (
+                        <li>
+                          <i
+                            role="button"
+                            onClick={() => this.chooseDropDownDay(item)}
+                            onKeyDown={() => this.chooseDropDownDay(item)}
+                            tabIndex={0}
+                          >
+                            {item}
+                          </i>
+                        </li>
+                      );
+                    })}
+                  </div>
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
 
         <div>
           <Birthdaysign sign={sign} setSign={setSign} month={month} day={day} />
         </div>
+        <Link to="./celebrity-lookup">
+          You want to ask for a celebritys astro sign?
+        </Link>
       </div>
     );
   }

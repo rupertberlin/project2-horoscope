@@ -4,6 +4,7 @@ import Birthdayselector from "@components/Birthdayselector";
 import DailyHoroscope from "@components/DailyHoroscope";
 import Celebritylookup from "@components/Celebritylookup";
 import NavBar from "@components/NavBar";
+import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
 
@@ -12,19 +13,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       sign: "capricorn",
-      showDaily: false,
-      signSelector: "Birthdayselector",
     };
 
-    this.setSignSelector = this.setSignSelector.bind(this);
     this.setSign = this.setSign.bind(this);
-    this.setShowDaily = this.setShowDaily.bind(this);
-  }
-
-  setSignSelector(component) {
-    this.setState({
-      signSelector: component,
-    });
   }
 
   setSign(sign) {
@@ -33,46 +24,29 @@ class App extends React.Component {
     });
   }
 
-  setShowDaily() {
-    const { showDaily } = this.state;
-    this.setState({
-      showDaily: !showDaily,
-    });
-  }
-
   render() {
-    const { sign, showDaily, signSelector } = this.state;
+    const { sign } = this.state;
+
     return (
       <div className="App">
         <NavBar />
         <Home />
 
-        {!showDaily && signSelector === "Birthdayselector" && (
-          <button
-            type="button"
-            onClick={() => this.setSignSelector("Celebritylookup")}
-          >
-            Ask for a celebritys astro sign
-          </button>
-        )}
-
-        {!showDaily && signSelector === "Celebritylookup" && (
-          <Celebritylookup sign={sign} setSign={this.setSign} />
-        )}
-
-        {!showDaily && signSelector === "Birthdayselector" && (
-          <Birthdayselector sign={sign} setSign={this.setSign} />
-        )}
-
-        {!showDaily && sign && (
-          <button type="button" onClick={this.setShowDaily}>
-            Go to Daily Horoscope
-          </button>
-        )}
-
-        {showDaily && (
-          <DailyHoroscope sign={sign} setShowDaily={this.setShowDaily} />
-        )}
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={<Birthdayselector sign={sign} setSign={this.setSign} />}
+          />
+          <Route
+            path="/celebrity-lookup/"
+            element={<Celebritylookup sign={sign} setSign={this.setSign} />}
+          />
+          <Route
+            path="/daily-horoscope/:date/:sign"
+            element={<DailyHoroscope />}
+          />
+        </Routes>
       </div>
     );
   }
