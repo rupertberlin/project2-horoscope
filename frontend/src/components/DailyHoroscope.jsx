@@ -21,7 +21,7 @@ function DailyHoroscope() {
     <div className="daily-horoscope">
       <div className="lucky-number">{json.lucky_number}</div>
       <p className="p-lucky">Lucky number</p>
-      <h3>
+      <h3 className="daily-title">
         {sign}
         <br />
         {json.date_range}
