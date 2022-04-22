@@ -1,13 +1,11 @@
 const express = require("express");
-
-const { ItemController } = require("./controllers");
+const db = require("./db/zodiacSigns");
 
 const router = express.Router();
 
-router.get("/items", ItemController.browse);
-router.get("/items/:id", ItemController.read);
-router.put("/items/:id", ItemController.edit);
-router.post("/items", ItemController.add);
-router.delete("/items/:id", ItemController.delete);
+router.get("/api/zodiac-signs/:sign", async (req, res) => {
+  const data = await db.getSignInformation(req.params.sign);
+  res.status(200).json({ data });
+});
 
 module.exports = router;
