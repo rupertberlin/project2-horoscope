@@ -10,9 +10,8 @@ function getSignInformation(sign) {
       }"`,
       (err, rows) => {
         if (err) {
-          console.log(err);
+          resolve(err);
         }
-        console.log(rows);
         resolve(rows);
       }
     );
