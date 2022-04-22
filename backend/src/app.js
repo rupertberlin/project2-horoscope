@@ -1,9 +1,13 @@
 const express = require("express");
 const path = require("path");
+const cors = require('cors')
 
 // let's create express app
 
 const app = express();
+
+// use cors to fetch from backend API
+app.use(cors())
 
 // use some application-level middlewares
 
