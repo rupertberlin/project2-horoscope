@@ -50,6 +50,10 @@ class App extends React.Component {
             path="/daily-horoscope/:date/:sign"
             element={<DailyHoroscope />}
           />
+          <Route
+            path="/information/zodiac-signs/list/"
+            element={<ParentListOFSigns />}
+          />
         </Routes>
       </div>
     );
