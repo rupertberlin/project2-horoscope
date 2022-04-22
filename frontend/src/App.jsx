@@ -3,6 +3,7 @@ import Home from "@pages/Home";
 import Birthdayselector from "@components/Birthdayselector";
 import DailyHoroscope from "@components/DailyHoroscope";
 import Celebritylookup from "@components/Celebritylookup";
+import ParentListOFSigns from "@components/ParentListOFSigns";
 import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
@@ -43,6 +44,10 @@ class App extends React.Component {
           <Route
             path="/daily-horoscope/:date/:sign"
             element={<DailyHoroscope />}
+          />
+          <Route
+            path="/information/zodiac-signs/list/"
+            element={<ParentListOFSigns />}
           />
         </Routes>
       </div>
