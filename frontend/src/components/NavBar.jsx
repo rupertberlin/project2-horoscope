@@ -12,8 +12,25 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import "./NavBar.css";
+import { Link } from "react-router-dom";
 
-const pages = ["Zodiac Sign", "Love game", "Contact"];
+const pages = [
+  {
+    pageName: "Home",
+    pageUrl: "/",
+    id: 1,
+  },
+  {
+    pageName: "Celebrity Lookup",
+    pageUrl: "/celebrity-lookup",
+    id: 2,
+  },
+  {
+    pageName: "Daily Horoscope",
+    pageUrl: "/daily-horoscope",
+    id: 3,
+  },
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
@@ -39,7 +56,7 @@ function ResponsiveAppBar() {
     <AppBar
       position="static"
       sx={{
-        backgroundColor: "red",
+        backgroundColor: "inherit",
       }}
     >
       <Container maxWidth="xl">
@@ -84,8 +101,10 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.id} onClick={handleCloseNavMenu}>
+                  <Link textAlign="center" to={page.pageUrl}>
+                    {page.pageName}
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -103,11 +122,13 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.id}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                <Link textAlign="center" to={page.pageUrl}>
+                  {page.pageName}
+                </Link>
               </Button>
             ))}
           </Box>
