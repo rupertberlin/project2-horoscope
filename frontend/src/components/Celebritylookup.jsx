@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import propTypes from "prop-types";
+import { TextField } from "@mui/material";
 import "@components/Celebritylookup.css";
 import Birthdaysign from "./Birthdaysign";
 
@@ -106,13 +106,16 @@ class Celebritylookup extends React.Component {
       <div>
         <h3> Who`s astro-sign you want to know?</h3>
         <div className="input-line">
-          <input
-            type="text"
-            name="celebrity"
+          <TextField
+            label="Type in Celebrity"
+            color="secondary"
+            variant="filled"
             value={input}
-            placeholder="e.g. Britney Spears"
+            placeholder="e.G. Britney Spears"
             onChange={(e) => this.handleChange(e)}
             autoComplete="off"
+            style={{ background: "white" }}
+            focused
           />
 
           {!json.error && !clickedName && (
@@ -147,10 +150,6 @@ class Celebritylookup extends React.Component {
         {showSign && (
           <Birthdaysign sign={sign} setSign={setSign} month={month} day={day} />
         )}
-        <br />
-        <Link to="/">
-          <button type="button">Back</button>
-        </Link>
         <br />
         &nbsp;
       </div>

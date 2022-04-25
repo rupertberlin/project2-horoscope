@@ -40,3 +40,14 @@ button {
 a {
   color: gold;
 }
+
+/* <Home /> */
+.site-title {
+  letter-spacing: 0.69rem;
+  text-shadow: gold 0px 0px 10px;
+}
+.subline {
+  margin-top: -35px;
+  letter-spacing: 0.19rem;
+  text-shadow: blueviolet 2px 2px 2px;
+}
