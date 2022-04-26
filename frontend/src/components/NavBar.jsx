@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -13,6 +14,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
+import logoImage from "@assets/logo.png";
 
 const pages = [
   {
@@ -29,6 +31,11 @@ const pages = [
     pageName: "Daily Horoscope",
     pageUrl: "/daily-horoscope",
     id: 3,
+  },
+  {
+    pageName: "Something",
+    pageUrl: "/something",
+    id: 4,
   },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -58,21 +65,17 @@ function ResponsiveAppBar() {
       sx={{
         backgroundColor: "inherit",
       }}
+      className="navBarClass"
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* DESKTOP VERSION */}
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
-          >
-            LOGO
-          </Typography>
-
+          <Link to="/">
+            <Avatar src={logoImage} alt="logo" variant="square" />
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
+              className="color"
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -117,7 +120,9 @@ function ResponsiveAppBar() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            LOGO
+            <Link to="/">
+              <Avatar src={logoImage} alt="logo" variant="square" />
+            </Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
