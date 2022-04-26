@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -75,7 +74,6 @@ function ResponsiveAppBar() {
           </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
-              className="color"
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
