@@ -32,8 +32,8 @@ const pages = [
     id: 3,
   },
   {
-    pageName: "Something",
-    pageUrl: "/something",
+    pageName: "Advice",
+    pageUrl: "/random-advice",
     id: 4,
   },
 ];
@@ -69,9 +69,17 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* DESKTOP VERSION */}
+          {/* WRAPPED LINK WITH DISPLAY ADAPTER*/}
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, display: {xs: "none", md: "flex" } }}
+          >
           <Link to="/">
             <Avatar src={logoImage} alt="logo" variant="square" />
           </Link>
+          </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
