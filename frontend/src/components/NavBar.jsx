@@ -69,16 +69,16 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* DESKTOP VERSION */}
-          {/* WRAPPED LINK WITH DISPLAY ADAPTER*/}
+          {/* WRAPPED LINK WITH DISPLAY ADAPTER */}
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: {xs: "none", md: "flex" } }}
+            sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
           >
-          <Link to="/">
-            <Avatar src={logoImage} alt="logo" variant="square" />
-          </Link>
+            <Link to="/">
+              <Avatar src={logoImage} alt="logo" variant="square" />
+            </Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
