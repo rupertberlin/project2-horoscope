@@ -103,7 +103,7 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                  <Link textAlign="center" to={page.pageUrl}>
+                  <Link style={{ textAlign: "center" }} to={page.pageUrl}>
                     {page.pageName}
                   </Link>
                 </MenuItem>
@@ -129,7 +129,7 @@ function ResponsiveAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                <Link textAlign="center" to={page.pageUrl}>
+                <Link style={{ textAlign: "center" }} to={page.pageUrl}>
                   {page.pageName}
                 </Link>
               </Button>
@@ -160,7 +160,9 @@ function ResponsiveAppBar() {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography style={{ textAlign: "center" }}>
+                    {setting}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
