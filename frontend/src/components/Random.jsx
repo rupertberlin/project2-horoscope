@@ -6,9 +6,8 @@ class Random extends React.Component {
     this.state = { advice: "", dataLoaded: false, image_url: "" };
   }
 
-
   componentDidMount() {
-    this.Fetchperson(), 
+    this.Fetchperson();
     this.FetchAdvice();
   }
 
@@ -19,7 +18,6 @@ class Random extends React.Component {
         this.setState({ ...data, dataLoaded: true });
       });
   };
-  
 
   FetchAdvice = () => {
     fetch("https://api.adviceslip.com/advice", {
@@ -40,8 +38,8 @@ class Random extends React.Component {
             type="submit"
             className="button"
             onClick={() => {
-                {this.Fetchperson()}
-                {this.FetchAdvice()}
+              this.Fetchperson();
+              this.FetchAdvice();
             }}
           >
             <span>GIVE ME SOMEONE!</span>
@@ -51,7 +49,7 @@ class Random extends React.Component {
           {dataLoaded ? (
             <img className="heading" src={imageUrl || ""} alt="Coucou" />
           ) : null}
-          </div> 
+        </div>
         <div>{advice}</div>
       </div>
     );
