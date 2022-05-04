@@ -129,14 +129,33 @@ li:nth-child(20) {
 
 .boxButton {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 
-.boxbutton {
+.textButton {
+  align-self: end;
+}
+
+.button {
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
   overflow: hidden;
   outline: none;
+}
+
+.link {
+  color: #241785;
+  text-decoration: none;
+}
+
+.boxAdvice {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.text {
+  color: #f2c968;
 }

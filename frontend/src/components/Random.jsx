@@ -41,7 +41,7 @@ class Random extends React.Component {
           <li />
           <li />
           <li />
-          <li>
+          <li className="boxAdvice">
             <p className="text">{advice}</p>
           </li>
           <li>
@@ -50,7 +50,9 @@ class Random extends React.Component {
             ) : null}
           </li>
           <li>
-            <Link to="/">Home</Link>
+            <Link className="link" to="/">
+              Home
+            </Link>
           </li>
           <li />
           <li />
