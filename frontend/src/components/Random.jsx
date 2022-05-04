@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import "./Mondrian.css";
 
 class Random extends React.Component {
@@ -49,7 +49,9 @@ class Random extends React.Component {
               <img className="boximage" src={imageUrl || ""} alt="Coucou" />
             ) : null}
           </li>
-          <li />
+          <li>
+            <Link to="/">Home</Link>
+          </li>
           <li />
           <li />
           <li />
