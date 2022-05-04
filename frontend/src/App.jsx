@@ -33,29 +33,57 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <NavBar />
-        <Home />
         <Routes>
-          <Route
-            exact
-            path="/"
-            element={<Birthdayselector sign={sign} setSign={this.setSign} />}
-          />
-          <Route
-            path="/celebrity-lookup/"
-            element={<Celebritylookup sign={sign} setSign={this.setSign} />}
-          />
-          <Route
-            path="/daily-horoscope/:date/:sign"
-            element={<DailyHoroscope />}
-          />
-          <Route
-            path="/zodiac-signs/information/:sign"
-            element={<DetailSign />}
-          />
-          <Route path="/random/" element={<Random />} />
-          {/*           <Route path="/advice/" element={<Advice />} /> 
+          <Route>
+            <Route
+              exact
+              path="/"
+              element={
+                <>
+                  <NavBar />
+                  <Home />
+                  <Birthdayselector sign={sign} setSign={this.setSign} />
+                </>
+              }
+            />
+            <Route
+              path="/celebrity-lookup/"
+              element={
+                <>
+                  <NavBar />
+                  <Home />
+                  <Celebritylookup sign={sign} setSign={this.setSign} />
+                </>
+              }
+            />
+            <Route
+              path="/daily-horoscope/:date/:sign"
+              element={
+                <>
+                  <NavBar />
+                  <Home />
+                  <DailyHoroscope />
+                </>
+              }
+            />
+            <Route
+              path="/zodiac-signs/information/:sign"
+              element={
+                <>
+                  <NavBar />
+                  <Home />
+                  <DetailSign />
+                </>
+              }
+            />
+          </Route>
+          <Route>
+            <Route>
+              <Route path="/random/" element={<Random />} />
+              {/*           <Route path="/advice/" element={<Advice />} /> 
           <Route path="/person/" element={<Person />} /> */}
+            </Route>
+          </Route>
         </Routes>
         <video
           autoPlay
