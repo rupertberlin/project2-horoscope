@@ -58,6 +58,26 @@ class App extends React.Component {
           {/*           <Route path="/advice/" element={<Advice />} /> 
           <Route path="/person/" element={<Person />} /> */}
         </Routes>
+        <video
+          autoPlay
+          loop
+          muted
+          style={{
+            position: "absolute",
+            width: "100%",
+            left: "50%",
+            top: "50%",
+            height: "100%",
+            objectFit: "cover",
+            transform: "translate(-50%, -50%)",
+            zIndex: "-1",
+          }}
+        >
+          <source
+            src="../../src/assets/video/production ID_4911644.mp4"
+            type="video/mp4"
+          />
+        </video>
       </div>
     );
   }
