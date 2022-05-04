@@ -6,6 +6,7 @@ import Celebritylookup from "@components/Celebritylookup";
 import NavBar from "@components/NavBar";
 import DetailSign from "@components/DetailSign";
 import { Route, Routes } from "react-router-dom";
+import Advice from "@components/advice";
 
 import "./App.css";
 
@@ -51,6 +52,7 @@ class App extends React.Component {
             path="/zodiac-signs/information/:sign"
             element={<DetailSign />}
           />
+          <Route path="/Advice" element={<Advice />} />
         </Routes>
       </div>
     );
