@@ -35,7 +35,6 @@ class App extends React.Component {
       <div className="App">
         <NavBar />
         <Home />
-
         <Routes>
           <Route
             exact

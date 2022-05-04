@@ -127,7 +127,6 @@ li:nth-child(20) {
   max-height: auto;
 }
 
-
 .boxButton {
   display: flex;
   align-items: center;
@@ -140,5 +139,4 @@ li:nth-child(20) {
   cursor: pointer;
   overflow: hidden;
   outline: none;
- 
 }
