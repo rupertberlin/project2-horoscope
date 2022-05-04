@@ -56,16 +56,16 @@ class Random extends React.Component {
           <li />
           <li />
           <li />
-          <li>
+          <li className="boxButton">
             <button
               type="submit"
-              className="boxbutton"
+              className="button"
               onClick={() => {
                 this.Fetchperson();
                 this.FetchAdvice();
               }}
             >
-              <span>Click ma gâtée</span>
+              <span className="textButton">Click ma gâtée</span>
             </button>
           </li>
           <li />
