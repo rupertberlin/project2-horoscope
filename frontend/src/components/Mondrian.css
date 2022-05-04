@@ -132,7 +132,7 @@ li:nth-child(20) {
   align-items: center;
 }
 
-.button {
+.boxbutton {
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
