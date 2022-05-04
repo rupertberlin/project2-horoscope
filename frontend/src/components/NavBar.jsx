@@ -33,7 +33,7 @@ const pages = [
   },
   {
     pageName: "Something",
-    pageUrl: "/something",
+    pageUrl: "/Random",
     id: 4,
   },
 ];

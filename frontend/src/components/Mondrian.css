@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+html.parent {
+  background: white;
+  background-image: url("http://labs.jensimmons.com/2016/examples/images/transparentbackground.svg");
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) 1.2fr 1.2fr 0.5fr;
+  grid-template-rows: 11vw repeat(5, 13vw) 11vw 6.5vw 6.5vw;
+  box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+}
+li {
+  height: 100%;
+  border: 1vw solid black;
+  background-size: cover;
+}
+li:nth-child(1) {
+  grid-column: span 2;
+  background-color: #e5eeeb;
+  border-top: none;
+  border-left: none;
+}
+li:nth-child(2) {
+  grid-column: span 3;
+  background-color: #f2e7d5;
+  border-top: none;
+}
+li:nth-child(3) {
+  grid-column: span 2;
+  background-color: #f2c968;
+  border-top: none;
+}
+li:nth-child(4) {
+  grid-row: span 6;
+  background-color: #fcfde7;
+  border-top: none;
+  border-right: none;
+}
+li:nth-child(5) {
+  grid-row: span 2;
+  background-color: #fbfde7;
+  border-left: none;
+}
+li:nth-child(6) {
+  grid-column: span 4;
+  grid-row: span 4;
+  background-color: #d62d24;
+}
+li:nth-child(7) {
+  grid-row: span 2;
+  grid-column: span 2;
+  background-color: #e1eae5; 
+}
+li:nth-child(8) {
+  grid-row: span 3;
+  background-color: #e1eae5;
+  border-left: none;
+}
+li:nth-child(9) {
+  grid-row: span 2;
+  background-color: #dfe5d0;
+}
+li:nth-child(10) {
+  grid-row: span 2;
+  background-color: #edcc6b;
+}
+li:nth-child(11) {
+  grid-row: span 2;
+  grid-column: span 2;
+  background-color: #130409;
+}
+li:nth-child(12) {
+  grid-column: span 2;
+  background-color: #c0bfba;
+}
+li:nth-child(13) {
+  grid-column: span 2;
+  background-color: #d6dee0;
+}
+li:nth-child(14) {
+  grid-row: span 3;
+  background-color: #f4c65a;
+  border-left: none;
+  border-bottom: none;
+}
+li:nth-child(15) {
+  grid-column: span 2;
+  background-color: #dee2d4;
+}
+li:nth-child(16) {
+  grid-row: span 2;
+  grid-column: span 2;
+  background-color: #241785;
+}
+li:nth-child(17) {
+  grid-row: span 3;
+  background-color: #d73630;
+  border-bottom: none;
+  border-right: none;
+}
+li:nth-child(18) {
+  grid-column: span 2;
+  grid-row: span 2;
+  background-color: #e3ded9;
+  border-bottom: none;
+}
+li:nth-child(19) {
+  grid-column: span 2;
+  background-color: #0b0205;
+}
+li:nth-child(20) {
+  grid-column: span 4;
+  background-color: #e0e0df;
+  border-bottom: none;
+}
+
+.boximage {
+    max-width: 100%;
+    max-height: auto;
+}
+
+.text {
+    align-self: flex-end;
+}
+
+.boxbutton {
+        background-color: transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+
+}

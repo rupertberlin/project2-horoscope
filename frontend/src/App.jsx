@@ -5,8 +5,8 @@ import DailyHoroscope from "@components/DailyHoroscope";
 import Celebritylookup from "@components/Celebritylookup";
 import NavBar from "@components/NavBar";
 import DetailSign from "@components/DetailSign";
-import Advice from "@components/Advice";
-import Person from "@components/Person";
+/* import Advice from "@components/Advice";
+import Person from "@components/Person"; */
 import Random from "@components/Random";
 import { Route, Routes } from "react-router-dom";
 
@@ -55,8 +55,8 @@ class App extends React.Component {
             element={<DetailSign />}
           />
           <Route path="/random/" element={<Random />} />
-          <Route path="/advice/" element={<Advice />} />
-          <Route path="/person/" element={<Person />} />
+          {/*           <Route path="/advice/" element={<Advice />} /> 
+          <Route path="/person/" element={<Person />} /> */}
         </Routes>
       </div>
     );

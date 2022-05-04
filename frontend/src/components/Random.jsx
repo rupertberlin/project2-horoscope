@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Mondrian.css";
+
 class Random extends React.Component {
   constructor(props) {
     super(props);
@@ -32,25 +34,46 @@ class Random extends React.Component {
   render() {
     const { advice, dataLoaded, image_url: imageUrl } = this.state; // eslint-disable-line
     return (
-      <div className="app">
-        <div className="card">
-          <button
-            type="submit"
-            className="button"
-            onClick={() => {
-              this.Fetchperson();
-              this.FetchAdvice();
-            }}
-          >
-            <span>GIVE ME SOMEONE!</span>
-          </button>
-        </div>
-        <div>
-          {dataLoaded ? (
-            <img className="heading" src={imageUrl || ""} alt="Coucou" />
-          ) : null}
-        </div>
-        <div>{advice}</div>
+      <div className="parent">
+        <ul>
+          <li />
+          <li />
+          <li />
+          <li />
+          <li />
+          <li>
+            <p className="text">{advice}</p>
+          </li>
+          <li>
+            {dataLoaded ? (
+              <img className="boximage" src={imageUrl || ""} alt="Coucou" />
+            ) : null}
+          </li>
+          <li />
+          <li />
+          <li />
+          <li />
+          <li />
+          <li />
+          <li />
+          <li>
+            <button
+              type="submit"
+              className="boxbutton"
+              onClick={() => {
+                this.Fetchperson();
+                this.FetchAdvice();
+              }}
+            >
+              <span>Click ma gâtée</span>
+            </button>
+          </li>
+          <li />
+          <li />
+          <li />
+          <li />
+          <li />
+        </ul>
       </div>
     );
   }
