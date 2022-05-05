@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import Home from "@pages/Home";
 import Birthdayselector from "@components/Birthdayselector";
 import DailyHoroscope from "@components/DailyHoroscope";
 import Celebritylookup from "@components/Celebritylookup";
+/* import Information from "@components/Information"; */
 import NavBar from "@components/NavBar";
 import DetailSign from "@components/DetailSign";
 /* import Advice from "@components/Advice";
