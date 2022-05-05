@@ -33,14 +33,12 @@ class Celebritylookup extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     const { input, json } = this.state;
     if (prevState.input !== input) {
-      const URL = `https://celebrity-by-api-ninjas.p.rapidapi.com/v1/celebrity?name=${input}`;
+      const URL = `https://api.api-ninjas.com/v1/celebrity?name=${input}`;
       if (input) {
         fetch(URL, {
           method: "GET",
           headers: {
-            "X-RapidAPI-Host": "celebrity-by-api-ninjas.p.rapidapi.com",
-            "X-RapidAPI-Key":
-              "201c4b515cmsh50fbbc704410b18p1eb192jsnd98dfadf24d9",
+            "X-Api-Key": "SNt5lLD6TQ61kSsMW/kR+Q==VAufZq2keyMyr0EP",
           },
         })
           .then((response) => response.json())
