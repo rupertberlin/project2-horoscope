@@ -7,6 +7,7 @@ import NavBar from "@components/NavBar";
 import DetailSign from "@components/DetailSign";
 import { Route, Routes } from "react-router-dom";
 import Advice from "@components/advice";
+import Face from "@components/face";
 
 import "./App.css";
 
@@ -51,7 +52,14 @@ class App extends React.Component {
             path="/zodiac-signs/information/:sign"
             element={<DetailSign />}
           />
-          <Route path="/random-advice" element={<Advice />} />
+          <Route 
+            path="/random-advice" 
+            element={<Advice />} 
+          />
+          <Route 
+            path="/random-face" 
+            element={<Face />} 
+          />
         </Routes>
       </div>
     );

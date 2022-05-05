@@ -15,6 +15,7 @@ import "./NavBar.css";
 import { Link } from "react-router-dom";
 import logoImage from "@assets/logo.png";
 
+
 const pages = [
   {
     pageName: "Home",
@@ -35,6 +36,11 @@ const pages = [
     pageName: "Advice",
     pageUrl: "/random-advice",
     id: 4,
+  },
+  {
+    pageName: "Face",
+    pageUrl: "/random-face",
+    id: 5,
   },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
