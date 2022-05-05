@@ -7,6 +7,7 @@ import NavBar from "@components/NavBar";
 import DetailSign from "@components/DetailSign";
 import { Route, Routes } from "react-router-dom";
 import Advice from "@components/advice";
+import SignList from "@components/SignList";
 
 import "./App.css";
 
@@ -48,6 +49,7 @@ class App extends React.Component {
             path="/daily-horoscope/:date/:sign"
             element={<DailyHoroscope />}
           />
+          <Route path="/zodiac-signs/information/" element={<SignList />} />
           <Route
             path="/zodiac-signs/information/:sign"
             element={<DetailSign />}
