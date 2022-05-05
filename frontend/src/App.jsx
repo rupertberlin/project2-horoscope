@@ -5,8 +5,10 @@ import DailyHoroscope from "@components/DailyHoroscope";
 import Celebritylookup from "@components/Celebritylookup";
 import NavBar from "@components/NavBar";
 import DetailSign from "@components/DetailSign";
+/* import Advice from "@components/Advice";
+import Person from "@components/Person"; */
+import Random from "@components/Random";
 import { Route, Routes } from "react-router-dom";
-import Advice from "@components/advice";
 
 import "./App.css";
 
@@ -51,8 +53,28 @@ class App extends React.Component {
             path="/zodiac-signs/information/:sign"
             element={<DetailSign />}
           />
-          <Route path="/random-advice" element={<Advice />} />
+          <Route path="/random-advice" element={<Random />} />
         </Routes>
+        <video
+          autoPlay
+          loop
+          muted
+          style={{
+            position: "absolute",
+            width: "100%",
+            left: "50%",
+            top: "50%",
+            height: "100%",
+            objectFit: "cover",
+            transform: "translate(-50%, -50%)",
+            zIndex: "-1",
+          }}
+        >
+          <source
+            src="../../src/assets/video/production ID_4911644.mp4"
+            type="video/mp4"
+          />
+        </video>
       </div>
     );
   }

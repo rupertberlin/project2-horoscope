@@ -1,6 +1,7 @@
 import React from "react";
-import "@components/DailyHoroscope.css";
+import "./DailyHoroscope.css";
 import { useParams, Link } from "react-router-dom";
+/* import production from "./video/production.mp4"; */
 
 function DailyHoroscope() {
   const [json, setJson] = React.useState("");
