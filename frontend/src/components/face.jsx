@@ -1,17 +1,13 @@
 import "@components/face.css";
 import React from "react";
-import axios from "axios";
-//import ThisPersonDoesNotExist from 'thispersondoesnotexist-js';
+// import ThisPersonDoesNotExist from 'thispersondoesnotexist-js';
 
-
-
-//const dnte = new ThisPersonDoesNotExist();
-
+// const dnte = new ThisPersonDoesNotExist();
 
 class Face extends React.Component {
   constructor() {
     super();
-    this.state = { face: "" };
+    this.state = "";
   }
 
   componentDidMount() {
@@ -24,23 +20,15 @@ class Face extends React.Component {
       .then((data) => {
         this.setState({ ...data, dataLoaded: true });
       });
-
-  
-
-
-    }
+  };
 
   render() {
     const { dataLoaded, image_url: imageUrl } = this.state; // eslint-disable-line
 
-
     return (
       <div className="app">
         <div className="card">
-          
-          {dataLoaded ? (
-            <img src={imageUrl || ""}  />
-          ) : null}
+          {dataLoaded ? <img src={imageUrl || ""} alt="alt" /> : null}
 
           <button onClick={this.fetchFace} type="button">
             <span>SHOW ME A RANDOM FACE!</span>

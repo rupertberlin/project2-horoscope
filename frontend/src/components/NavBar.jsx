@@ -15,7 +15,6 @@ import "./NavBar.css";
 import { Link } from "react-router-dom";
 import logoImage from "@assets/logo.png";
 
-
 const pages = [
   {
     pageName: "Home",

@@ -52,14 +52,8 @@ class App extends React.Component {
             path="/zodiac-signs/information/:sign"
             element={<DetailSign />}
           />
-          <Route 
-            path="/random-advice" 
-            element={<Advice />} 
-          />
-          <Route 
-            path="/random-face" 
-            element={<Face />} 
-          />
+          <Route path="/random-advice" element={<Advice />} />
+          <Route path="/random-face" element={<Face />} />
         </Routes>
       </div>
     );
