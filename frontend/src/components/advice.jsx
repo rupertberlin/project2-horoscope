@@ -1,6 +1,6 @@
 import React from "react";
 // import { useParams } from "react-router-dom";
-import "./Advice.css";
+import "./advice.css";
 
 class Advice extends React.Component {
   constructor(props) {
