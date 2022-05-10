@@ -1,0 +1,9 @@
+.detail-container {
+  width: 100%;
+}
+
+.detail-description {
+  line-height: 2.1rem;
+  max-width: 55ch;
+  margin: auto;
+}

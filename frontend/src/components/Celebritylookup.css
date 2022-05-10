@@ -1,0 +1,37 @@
+.input-line {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.isvalid {
+  background: green;
+}
+
+input {
+  width: 200px;
+  height: 28px;
+  box-shadow: blueviolet 1px 4px 8px 3px;
+}
+
+.auto-find {
+  background: blue;
+  height: 0px;
+  user-select: none;
+}
+
+.auto-find-line {
+  position: relative;
+  background: blueviolet;
+  border: solid blue 2px;
+  width: 204px;
+  z-index: 50;
+}
+
+.auto-find-line:hover {
+  background: violet;
+}
+
+.no-hover:hover {
+  background: blueviolet;
+}
