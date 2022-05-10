@@ -27,14 +27,9 @@ const pages = [
     id: 2,
   },
   {
-    pageName: "Daily Horoscope",
-    pageUrl: "/daily-horoscope",
-    id: 3,
-  },
-  {
     pageName: "Advice",
     pageUrl: "/random-advice",
-    id: 4,
+    id: 3,
   },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
