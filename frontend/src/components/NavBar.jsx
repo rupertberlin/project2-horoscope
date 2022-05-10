@@ -31,6 +31,11 @@ const pages = [
     pageUrl: "/random-advice",
     id: 3,
   },
+  {
+    pageName: "Zodiac Signs",
+    pageUrl: "/zodiac-signs/information",
+    id: 4,
+  },
 ];
 /* const settings = ["Profile", "Account", "Dashboard", "Logout"]; */
 
