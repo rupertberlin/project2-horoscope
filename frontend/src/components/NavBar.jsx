@@ -9,7 +9,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
+/* import Tooltip from "@mui/material/Tooltip"; */
 import MenuItem from "@mui/material/MenuItem";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
@@ -27,36 +27,31 @@ const pages = [
     id: 2,
   },
   {
-    pageName: "Daily Horoscope",
-    pageUrl: "/daily-horoscope",
-    id: 3,
-  },
-  {
     pageName: "Advice",
     pageUrl: "/random-advice",
-    id: 4,
+    id: 3,
   },
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+/* const settings = ["Profile", "Account", "Dashboard", "Logout"]; */
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  /*  const [anchorElUser, setAnchorElUser] = React.useState(null); */
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
+  /*   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
-  };
+  }; */
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
+  /*   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
-  };
+  }; */
 
   return (
     <AppBar
@@ -144,7 +139,7 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          {/*           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -174,7 +169,7 @@ function ResponsiveAppBar() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>

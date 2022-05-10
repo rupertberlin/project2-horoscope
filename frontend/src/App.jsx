@@ -1,16 +1,14 @@
 import React from "react";
-import Home from "@pages/Home";
 import Birthdayselector from "@components/Birthdayselector";
 import DailyHoroscope from "@components/DailyHoroscope";
 import Celebritylookup from "@components/Celebritylookup";
-import NavBar from "@components/NavBar";
 import DetailSign from "@components/DetailSign";
-/* import Advice from "@components/Advice";
-import Person from "@components/Person"; */
 import Random from "@components/Random";
 import { Route, Routes } from "react-router-dom";
 import SignList from "@components/SignList";
 
+import WithNav from "./layouts/WithNav";
+import WithoutNav from "./layouts/WithoutNav";
 import "./App.css";
 
 class App extends React.Component {
@@ -34,28 +32,30 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <NavBar />
-        <Home />
         <Routes>
-          <Route
-            exact
-            path="/"
-            element={<Birthdayselector sign={sign} setSign={this.setSign} />}
-          />
-          <Route
-            path="/celebrity-lookup/"
-            element={<Celebritylookup sign={sign} setSign={this.setSign} />}
-          />
-          <Route
-            path="/daily-horoscope/:date/:sign"
-            element={<DailyHoroscope />}
-          />
-          <Route path="/zodiac-signs/information/" element={<SignList />} />
-          <Route
-            path="/zodiac-signs/information/:sign"
-            element={<DetailSign />}
-          />
-          <Route path="/random-advice" element={<Random />} />
+          <Route element={<WithNav />}>
+            <Route
+              exact
+              path="/"
+              element={<Birthdayselector sign={sign} setSign={this.setSign} />}
+            />
+            <Route
+              path="/celebrity-lookup/"
+              element={<Celebritylookup sign={sign} setSign={this.setSign} />}
+            />
+            <Route
+              path="/daily-horoscope/:date/:sign"
+              element={<DailyHoroscope />}
+            />
+            <Route path="/zodiac-signs/information/" element={<SignList />} />
+            <Route
+              path="/zodiac-signs/information/:sign"
+              element={<DetailSign />}
+            />
+          </Route>
+          <Route element={<WithoutNav />}>
+            <Route path="/random-advice" element={<Random />} />
+          </Route>
         </Routes>
         <video
           autoPlay
