@@ -69,7 +69,7 @@ class Random extends React.Component {
                 this.FetchAdvice();
               }}
             >
-              <span className="textButton">Click ma gâtée</span>
+              <span className="textButton">Click</span>
             </button>
           </li>
           <li />
