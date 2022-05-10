@@ -7,6 +7,9 @@ import DetailSign from "@components/DetailSign";
 import Person from "@components/Person"; */
 import Random from "@components/Random";
 import { Route, Routes } from "react-router-dom";
+import Advice from "@components/advice";
+import SignList from "@components/SignList";
+
 import WithNav from "./layouts/WithNav";
 import WithoutNav from "./layouts/WithoutNav";
 import "./App.css";
@@ -47,10 +50,12 @@ class App extends React.Component {
               path="/daily-horoscope/:date/:sign"
               element={<DailyHoroscope />}
             />
+            <Route path="/zodiac-signs/information/" element={<SignList />} />
             <Route
               path="/zodiac-signs/information/:sign"
               element={<DetailSign />}
             />
+                
           </Route>
           <Route element={<WithoutNav />}>
             <Route path="/random-advice" element={<Random />} />

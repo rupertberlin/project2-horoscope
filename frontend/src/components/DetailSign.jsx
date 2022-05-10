@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "@components/DetailSign.css";
 
 function DetailSign() {
@@ -32,6 +32,7 @@ function DetailSign() {
     <div className="detail-container">
       <h3 className="detail-sign">{json.data[0].sign}</h3>
       <p className="detail-description">{json.data[0].description}</p>
+      <Link to="/zodiac-signs/information">Back</Link>
     </div>
   );
 }
