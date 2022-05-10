@@ -1,15 +1,14 @@
 import React from "react";
-import Home from "@pages/Home";
 import Birthdayselector from "@components/Birthdayselector";
 import DailyHoroscope from "@components/DailyHoroscope";
 import Celebritylookup from "@components/Celebritylookup";
-import NavBar from "@components/NavBar";
 import DetailSign from "@components/DetailSign";
 /* import Advice from "@components/Advice";
 import Person from "@components/Person"; */
 import Random from "@components/Random";
 import { Route, Routes } from "react-router-dom";
-
+import WithNav from "./layouts/WithNav";
+import WithoutNav from "./layouts/WithoutNav";
 import "./App.css";
 
 class App extends React.Component {
@@ -34,55 +33,27 @@ class App extends React.Component {
     return (
       <div className="App">
         <Routes>
-          <Route>
+          <Route element={<WithNav />}>
             <Route
               exact
               path="/"
-              element={
-                <>
-                  <NavBar />
-                  <Home />
-                  <Birthdayselector sign={sign} setSign={this.setSign} />
-                </>
-              }
+              element={<Birthdayselector sign={sign} setSign={this.setSign} />}
             />
             <Route
               path="/celebrity-lookup/"
-              element={
-                <>
-                  <NavBar />
-                  <Home />
-                  <Celebritylookup sign={sign} setSign={this.setSign} />
-                </>
-              }
+              element={<Celebritylookup sign={sign} setSign={this.setSign} />}
             />
             <Route
               path="/daily-horoscope/:date/:sign"
-              element={
-                <>
-                  <NavBar />
-                  <Home />
-                  <DailyHoroscope />
-                </>
-              }
+              element={<DailyHoroscope />}
             />
             <Route
               path="/zodiac-signs/information/:sign"
-              element={
-                <>
-                  <NavBar />
-                  <Home />
-                  <DetailSign />
-                </>
-              }
+              element={<DetailSign />}
             />
           </Route>
-          <Route>
-            <Route>
-              <Route path="/random/" element={<Random />} />
-              {/*           <Route path="/advice/" element={<Advice />} /> 
-          <Route path="/person/" element={<Person />} /> */}
-            </Route>
+          <Route element={<WithoutNav />}>
+            <Route path="/random-advice" element={<Random />} />
           </Route>
         </Routes>
         <video
