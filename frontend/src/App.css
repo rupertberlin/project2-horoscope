@@ -45,7 +45,8 @@ button:hover {
 }
 
 a {
-  color: gold;
+  color: black;
+  text-decoration: none;
 }
 
 /* <Home /> */

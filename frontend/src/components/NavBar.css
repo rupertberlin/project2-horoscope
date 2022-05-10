@@ -69,8 +69,12 @@ main h1 {
 
 .navBarClass {
   background-color: "inherit" !important;
+  color: white;
 }
 
 .navBarClass:hover {
-  background-color: black;
+  background-color: lightpink;
+  opacity: 0.5;
 }
+
+

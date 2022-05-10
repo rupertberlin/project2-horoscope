@@ -35,13 +35,13 @@ class Random extends React.Component {
     const { advice, dataLoaded, image_url: imageUrl } = this.state; // eslint-disable-line
     return (
       <div className="parent">
-        <ul>
+        <ul id="randomid">
           <li />
           <li />
           <li />
           <li />
           <li />
-          <li className="boxAdvice">
+          <li className="randomList boxAdvice">
             <p className="text">{advice}</p>
           </li>
           <li>
@@ -63,7 +63,7 @@ class Random extends React.Component {
           <li className="boxButton">
             <button
               type="submit"
-              className="button"
+              className="RandomButton"
               onClick={() => {
                 this.Fetchperson();
                 this.FetchAdvice();
