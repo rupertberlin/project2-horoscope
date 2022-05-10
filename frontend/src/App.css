@@ -35,6 +35,13 @@ code {
 
 button {
   font-size: calc(10px + 2vmin);
+  /* cursor to button */
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+}
+
+button:hover {
+  box-shadow: 3px 3px 2px 2px;
 }
 
 a {

@@ -32,8 +32,8 @@ const pages = [
     id: 3,
   },
   {
-    pageName: "Something",
-    pageUrl: "/something",
+    pageName: "Advice",
+    pageUrl: "/random-advice",
     id: 4,
   },
 ];
@@ -69,9 +69,17 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* DESKTOP VERSION */}
-          <Link to="/">
-            <Avatar src={logoImage} alt="logo" variant="square" />
-          </Link>
+          {/* WRAPPED LINK WITH DISPLAY ADAPTER */}
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
+          >
+            <Link to="/">
+              <Avatar src={logoImage} alt="logo" variant="square" />
+            </Link>
+          </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -103,7 +111,7 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                  <Link textAlign="center" to={page.pageUrl}>
+                  <Link style={{ textAlign: "center" }} to={page.pageUrl}>
                     {page.pageName}
                   </Link>
                 </MenuItem>
@@ -129,7 +137,7 @@ function ResponsiveAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                <Link textAlign="center" to={page.pageUrl}>
+                <Link style={{ textAlign: "center" }} to={page.pageUrl}>
                   {page.pageName}
                 </Link>
               </Button>
@@ -160,7 +168,9 @@ function ResponsiveAppBar() {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography style={{ textAlign: "center" }}>
+                    {setting}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>

@@ -1,35 +1,38 @@
-import "@components/advice.css";
 import React from "react";
-import axios from "axios";
+// import { useParams } from "react-router-dom";
+import "./Advice.css";
 
 class Advice extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { advice: "" };
   }
 
   componentDidMount() {
-    this.fetchAdvice();
+    this.FetchAdvice();
   }
 
-  fetchAdvice = () => {
-    axios
-      .get("https://api.adviceslip.com/advice")
-      .then((response) => {
-        const { advice } = response.data.slip;
-        this.setState({ advice });
-      })
-      .catch(() => {});
+  FetchAdvice = () => {
+    fetch("https://api.adviceslip.com/advice", {
+      cache: "no-cache",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState(data.slip);
+      });
   };
 
   render() {
     const { advice } = this.state;
-
     return (
       <div className="app">
         <div className="card">
           <h1 className="heading">{advice}</h1>
-          <button onClick={this.fetchAdvice} type="button">
+          <button
+            type="submit"
+            className="button"
+            onClick={() => this.FetchAdvice()}
+          >
             <span>GIVE ME ADVICE!</span>
           </button>
         </div>
@@ -37,5 +40,7 @@ class Advice extends React.Component {
     );
   }
 }
+
+// const { advice } = useParams();
 
 export default Advice;
