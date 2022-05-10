@@ -11,7 +11,7 @@ function DetailSign() {
 
   const renderInfo = () => {
     try {
-      const URL = `http://localhost:5000/api/zodiac-signs?sign=${sign}`;
+      const URL = `http://localhost:3002/api/zodiac-signs?sign=${sign}`;
       fetch(URL, {
         method: "GET",
       })
