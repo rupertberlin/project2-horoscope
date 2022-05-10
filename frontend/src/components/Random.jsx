@@ -49,17 +49,6 @@ class Random extends React.Component {
               <img className="boximage" src={imageUrl || ""} alt="Coucou" />
             ) : null}
           </li>
-          <li>
-            <Link className="link" to="/">
-              Home
-            </Link>
-          </li>
-          <li />
-          <li />
-          <li />
-          <li />
-          <li />
-          <li />
           <li className="boxButton">
             <button
               type="submit"
@@ -71,6 +60,17 @@ class Random extends React.Component {
             >
               <span className="textButton">Click</span>
             </button>
+          </li>
+          <li />
+          <li />
+          <li />
+          <li />
+          <li />
+          <li />
+          <li>
+            <Link className="link" to="/">
+              Home
+            </Link>
           </li>
           <li />
           <li />
